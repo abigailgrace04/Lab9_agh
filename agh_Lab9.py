@@ -20,6 +20,7 @@ def decode(num_string):
         original_password += num
     return original_password
 
+
 def main():
     menu = '''Menu
     
@@ -31,17 +32,21 @@ def main():
     while True:
         print(menu)
         option = int(input("\nPlease enter an option: "))
+        encoded = ""
+        decoded = ""
 
         if option == 1:
             user_password = input("Please enter your password to encode: ")
             encode(user_password)
             print("Your password has been encoded and stored!\n")
 
+        if option == 2:
+            user_password = input("Please enter your password to decode: ")
+            decode(user_password)
+            print(f"The encoded password is {encoded}, and the original password is {decoded}\n")
 
         elif option == 3:
             break
-
-
 
     if __name__ == '__main__':
         main()
